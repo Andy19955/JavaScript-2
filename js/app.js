@@ -2,6 +2,8 @@ import { toggleMenu } from "./ui/shared/toggleMenu.js";
 import { toggleFollowersFollowing } from "./ui/toggleFollowersFollowing.js";
 import { registerHandler } from "./handlers/auth/registerHandler.js";
 import { signInHandler } from "./handlers/auth/signInHandler.js";
+import { allPostsHandler } from "./handlers/posts/allPostsHandler.js";
+import { accessToken, apiKey } from "./constants/constants.js";
 
 function router() {
   const { pathname } = location;
@@ -20,6 +22,7 @@ function router() {
       break;
     case "/feed/":
       toggleMenu();
+      allPostsHandler(accessToken, apiKey);
       break;
   }
 }
