@@ -1,5 +1,7 @@
 import { toggleMenu } from "./ui/shared/toggleMenu.js";
 import { toggleFollowersFollowing } from "./ui/toggleFollowersFollowing.js";
+import { registerHandler } from "./handlers/auth/registerHandler.js";
+import { signInHandler } from "./handlers/auth/signInHandler.js";
 
 function router() {
   const { pathname } = location;
@@ -7,10 +9,10 @@ function router() {
   switch (pathname) {
     case "/":
     case "/index.html":
-      console.log("sign in");
+      signInHandler();
       break;
     case "/register/":
-      console.log("register");
+      registerHandler();
       break;
     case "/profile/":
       toggleMenu();
