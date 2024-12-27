@@ -20,7 +20,8 @@ async function submitForm(event) {
   try {
     fieldset.disabled = true;
     submitButton.innerHTML = "<i class='fa fa-spinner fa-spin'></i>";
-    await signInUser(data);
+    const response = await signInUser(data);
+    localStorage.setItem("accesToken", response.data.accessToken);
     window.location.href = "/profile/";
   } catch (error) {
     displayMessage("#messageContainer", "error", error.message);
