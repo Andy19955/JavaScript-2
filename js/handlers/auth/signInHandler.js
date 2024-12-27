@@ -21,7 +21,7 @@ async function submitForm(event) {
     fieldset.disabled = true;
     submitButton.innerHTML = "<i class='fa fa-spinner fa-spin'></i>";
     const response = await signInUser(data);
-    localStorage.setItem("accesToken", response.data.accessToken);
+    localStorage.setItem("accessToken", response.data.accessToken);
     window.location.href = "/profile/";
   } catch (error) {
     displayMessage("#messageContainer", "error", error.message);
