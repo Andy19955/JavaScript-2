@@ -22,7 +22,7 @@ function router() {
       break;
     case "/feed/":
       toggleMenu();
-      allPostsHandler(accessToken, apiKey);
+      allPostsHandler(accessToken, apiKey, 1);
       break;
   }
 }
