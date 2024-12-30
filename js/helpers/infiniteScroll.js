@@ -1,18 +1,8 @@
 import { allPostsHandler } from "../handlers/posts/allPostsHandler.js";
+import { throttle } from "./throttleFunction.js";
 
 // export function infiniteScroll() {
 const postsLoader = document.querySelector("#postsLoader");
-let throttleTimer;
-const throttle = (callback, time) => {
-  if (throttleTimer) return;
-
-  throttleTimer = true;
-
-  setTimeout(() => {
-    callback();
-    throttleTimer = false;
-  }, time);
-};
 
 let currentPage = 1;
 
