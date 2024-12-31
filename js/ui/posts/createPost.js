@@ -1,4 +1,7 @@
 export function createPost(post) {
+  const postCardLink = document.createElement("a");
+  postCardLink.setAttribute("href", `/post/?id=${post.id}`);
+
   const postCard = document.createElement("div");
   postCard.classList.add("overflow-hidden", "relative", "group", "hover:cursor-pointer", "rounded-lg", "h-64");
 
@@ -31,5 +34,6 @@ export function createPost(post) {
   postCard.append(postImage);
   postCard.append(titleOverlayDiv);
   postCard.append(postTitle);
-  return postCard;
+  postCardLink.append(postCard);
+  return postCardLink;
 }
