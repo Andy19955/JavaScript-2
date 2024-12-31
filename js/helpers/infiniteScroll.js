@@ -5,14 +5,14 @@ const postsLoader = document.querySelector("#postsLoader");
 
 let currentPage = 1;
 
-export function handleInfiniteScroll(accessToken, apiKey) {
+export function infiniteScroll() {
   throttle(() => {
     const endOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 300;
 
     if (endOfPage) {
       postsLoader.classList.remove("hidden");
       currentPage++;
-      allPostsHandler(accessToken, apiKey, currentPage);
+      allPostsHandler(currentPage);
     }
   }, 1000);
 }
