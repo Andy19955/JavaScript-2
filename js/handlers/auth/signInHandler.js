@@ -1,4 +1,5 @@
 import { signInUser } from "../../api/auth/signInUser.js";
+import { saveName, saveToken } from "../../helpers/storage.js";
 import { displayMessage } from "../../ui/shared/displayMessage.js";
 
 export function signInHandler() {
@@ -21,7 +22,8 @@ async function submitForm(event) {
     fieldset.disabled = true;
     submitButton.innerHTML = "<i class='fa fa-spinner fa-spin'></i>";
     const response = await signInUser(data);
-    localStorage.setItem("accessToken", response.data.accessToken);
+    saveToken(response.data.accessToken);
+    saveName(response.data.name);
     window.location.href = "/profile/";
   } catch (error) {
     displayMessage("#messageContainer", "error", error.message);
