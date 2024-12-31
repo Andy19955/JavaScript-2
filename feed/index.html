@@ -49,42 +49,87 @@
     <main class="container mx-auto flex flex-col flex-1 gap-5 p-3">
       <section class="flex flex-col lg:flex-row gap-4">
         <div class="lg:w-3/4 bg-white shadow-md rounded-md p-3">
-          <form class="w-full flex flex-col gap-4">
-            <div class="flex flex-col gap-2">
-              <h2 class="font-bold text-lg">Create new post</h2>
-              <label for="title" class="font-bold">Title</label>
-              <input type="text" id="title" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" placeholder="Post name" required />
-              <label for="image" class="font-bold">Upload image</label>
-              <input type="file" id="image" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" required />
-              <label for="description" class="font-bold">Description</label>
-              <textarea id="description" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:h-40 focus:border-orange-700" placeholder="Post description"></textarea>
-            </div>
-            <button class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600">
-              Publish
-            </button>
+          <form id="createPostForm" class="w-full">
+            <fieldset class="flex flex-col gap-4">
+              <div class="flex flex-col gap-2">
+                <h2 class="font-bold text-lg">Create new post</h2>
+                <div class="flex flex-col">
+                  <label for="title" class="font-bold">Title</label>
+                  <input type="text" id="title" name="title" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" placeholder="Post name" required />
+                </div>
+                <div class="flex gap-2">
+                  <div class="flex flex-col flex-1">
+                    <label for="imageUrl" class="font-bold">Upload image</label>
+                    <input type="text" id="imageUrl" name="imageUrl" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" placeholder="Image URL" required />
+                  </div>
+                  <div class="flex flex-col flex-1">
+                    <label for="imageAlt" class="font-bold">Image description</label>
+                    <input
+                      type="text"
+                      id="imageAlt"
+                      name="imageAlt"
+                      class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700"
+                      placeholder="Short image description"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <label for="body" class="font-bold">Description</label>
+                  <textarea
+                    id="body"
+                    name="body"
+                    class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700"
+                    placeholder="Post description"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <button
+                id="submitButton"
+                type="submit"
+                class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
+              >
+                Publish
+              </button>
+            </fieldset>
           </form>
         </div>
         <div class="flex flex-col gap-4 w-full lg:w-1/4">
           <div class="flex flex-col gap-5 bg-white shadow-md rounded-md p-3 h-fit">
             <h2 class="text-lg">Search</h2>
-            <form class="flex flex-col gap-1">
-              <label for="search" class="font-bold">Search for posts</label>
-              <input type="text" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" id="search" placeholder="Enter search word" required />
+            <form id="postSearchForm">
+              <fieldset class="flex flex-col gap-4">
+                <div class="flex flex-col">
+                  <label for="search" class="font-bold">Search for posts</label>
+                  <input type="text" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" id="search" placeholder="Enter search word" required />
+                </div>
+                <button
+                  type="submit"
+                  id="submitSearchButton"
+                  class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
+                >
+                  Search
+                </button>
+              </fieldset>
             </form>
           </div>
           <div class="flex flex-col gap-5 bg-white shadow-md rounded-md p-3 h-fit">
-            <h2 class="text-lg">Sorting</h2>
-            <form class="flex flex-col gap-1">
-              <fieldset>
-                <legend>Sort posts from...</legend>
-                <div class="flex gap-1">
-                  <input type="radio" id="newtolate" name="sorting" value="newtolate" checked />
-                  <label for="newtolate">Newest to latest</label>
+            <h2 class="text-lg">Filtering</h2>
+            <form id="postFilteringForm">
+              <fieldset class="flex flex-col gap-4">
+                <div class="flex flex-col">
+                  <label for="search" class="font-bold">Filter by tag</label>
+                  <input type="text" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" id="search" placeholder="Enter tag" required />
                 </div>
-                <div class="flex gap-1">
-                  <input type="radio" id="latetonew" name="sorting" value="latetonew" />
-                  <label for="latetonew">Latest to newest</label>
-                </div>
+                <button
+                  type="submit"
+                  id="submitFilteringButton"
+                  class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
+                >
+                  Filter
+                </button>
               </fieldset>
             </form>
           </div>
