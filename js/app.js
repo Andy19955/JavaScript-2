@@ -3,7 +3,10 @@ import { toggleFollowersFollowing } from "./ui/toggleFollowersFollowing.js";
 import { registerHandler } from "./handlers/auth/registerHandler.js";
 import { signInHandler } from "./handlers/auth/signInHandler.js";
 import { allPostsHandler } from "./handlers/posts/allPostsHandler.js";
-import { accessToken, apiKey } from "./constants/constants.js";
+import { profileHandler } from "./handlers/profiles/profileHandler.js";
+import { singlePostHandler } from "./handlers/posts/singlePostHandler.js";
+import { createPostHandler } from "./handlers/posts/createPostHandler.js";
+import { editPostHandler } from "./handlers/posts/editPostHandler.js";
 
 function router() {
   const { pathname } = location;
@@ -19,10 +22,20 @@ function router() {
     case "/profile/":
       toggleMenu();
       toggleFollowersFollowing();
+      profileHandler();
       break;
     case "/feed/":
       toggleMenu();
-      allPostsHandler(accessToken, apiKey, 1);
+      allPostsHandler(1);
+      createPostHandler();
+      break;
+    case "/post/":
+      toggleMenu();
+      singlePostHandler();
+      break;
+    case "/post/edit/":
+      toggleMenu();
+      editPostHandler();
       break;
   }
 }
