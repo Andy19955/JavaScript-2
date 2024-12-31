@@ -1,8 +1,8 @@
-import { postsUrl } from "../../constants/apiUrls.js";
+import { profileUrl } from "../../constants/apiUrls.js";
 import { apiKey } from "../../constants/constants.js";
 import { getToken } from "../../helpers/storage.js";
 
-export async function fetchPosts(postsPage) {
+export async function fetchProfile(name) {
   const options = {
     headers: {
       "Content-Type": "application/json",
@@ -11,10 +11,10 @@ export async function fetchPosts(postsPage) {
     },
   };
 
-  const response = await fetch(`${postsUrl}?_author=true&limit=40&page=${postsPage}`, options);
+  const response = await fetch(`${profileUrl}/${name}?_followers=true&_following=true`, options);
   const json = await response.json();
   if (!response.ok) {
-    throw new Error(json.errors?.[0]?.message || "Failed fetching posts.");
+    throw new Error(json.errors?.[0]?.message || "Failed fetching profile.");
   }
   return json;
 }
