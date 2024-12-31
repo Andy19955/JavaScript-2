@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beam</title>
+    <meta name="description" content="See other user's posts." />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <script src="/js/app.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/39adc5ba14.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-white text-black shadow-md">
+      <nav class="container mx-auto py-2 px-3">
+        <div class="flex justify-between">
+          <a href="/feed/" class="flex items-center py-4 px-2">
+            <img src="/images/logo.png" alt="Beam logo with slogan" class="w-48" />
+          </a>
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="/feed" class="py-4 px-2 font-semibold hover:text-orange-700 hover:border-b-2 hover:border-b-orange-700 transition duration-300">Feed</a>
+            <a href="/profile" class="py-4 px-2 font-semibold hover:text-orange-700 hover:border-b-2 hover:border-b-orange-700 transition duration-300">Profile</a>
+            <a href="/" class="py-4 px-2 font-semibold hover:text-orange-700 hover:border-b-2 hover:border-b-orange-700 transition duration-300">Sign out</a>
+          </div>
+          <div class="flex md:hidden item-center">
+            <button id="menu-button">
+              <span class="hidden">Toggle menu</span>
+              <svg class="w-6 h-6 text-gray-500 hover:text-orange-700" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="hidden" id="mobile-menu">
+          <ul>
+            <li>
+              <a href="/feed" class="block text-sm py-4 px-2 hover:bg-orange-700 hover:text-white transition duration-300">Feed</a>
+            </li>
+            <li>
+              <a href="/profile" class="block text-sm py-4 px-2 hover:bg-orange-700 hover:text-white transition duration-300">Profile</a>
+            </li>
+            <li>
+              <a href="/" class="block text-sm py-4 px-2 hover:bg-orange-700 hover:text-white transition duration-300">Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto flex flex-col flex-1 gap-5 p-3">
+      <section class="flex flex-col lg:flex-row gap-4">
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div id="messageContainer"></div>
+          <div id="postLoader">Loading post data... <i class="fa fa-spinner fa-spin"></i></div>
+          <form id="editPostForm" class="hidden w-full">
+            <fieldset class="flex flex-col gap-4">
+              <div class="flex flex-col gap-2">
+                <h2 class="font-bold text-lg">Edit post</h2>
+                <div class="flex flex-col">
+                  <label for="title" class="font-bold">Title</label>
+                  <input type="text" id="title" name="title" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" placeholder="Post name" required />
+                </div>
+                <div class="flex gap-2">
+                  <div class="flex flex-col flex-1">
+                    <label for="imageUrl" class="font-bold">Upload image</label>
+                    <input type="text" id="imageUrl" name="imageUrl" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" placeholder="Image URL" required />
+                  </div>
+                  <div class="flex flex-col flex-1">
+                    <label for="imageAlt" class="font-bold">Image description</label>
+                    <input
+                      type="text"
+                      id="imageAlt"
+                      name="imageAlt"
+                      class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700"
+                      placeholder="Short image description"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="flex flex-col">
+                  <label for="body" class="font-bold">Description</label>
+                  <textarea
+                    id="body"
+                    name="body"
+                    class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700"
+                    placeholder="Post description"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <div class="flex justify-between">
+                <button
+                  id="submitButton"
+                  type="submit"
+                  class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
+                >
+                  Update
+                </button>
+                <button id="deleteButton" type="button" class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-red-900 hover:bg-red-800 transition duration-100">Delete</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center p-2 h-12">&copy; 2024 Beam</footer>
+  </body>
+</html>
