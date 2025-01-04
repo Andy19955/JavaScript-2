@@ -1,3 +1,14 @@
+/**
+ * @param {(string|HTMLElement)} container - The container where the message will be displayed
+ * @param {('error'|'success')} messageType - The type of message to display
+ * @param {string} message - The text content of the message to display
+ * @returns {void} - This function doesn't return anything
+ *
+ * @example
+ * // Use this function to display a styled error or a success message on the page.
+ * displayMessage("#messageContainer", "error", "Something went wrong!");
+ */
+
 export function displayMessage(container, messageType, message) {
   let parent = container;
 
