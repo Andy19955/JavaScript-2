@@ -15,8 +15,8 @@ export function createPost(post) {
     postImage.alt = post.media?.alt || `${post.title} post's featured image`;
     postImage.src = post.media.url;
   } else {
-    postImage.alt = "Screen with programming language";
-    postImage.src = "https://images.unsplash.com/photo-1618044619888-009e412ff12a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    postImage.alt = "A light beam with the name and slogan of Beam.";
+    postImage.src = "/images/logo.png";
   }
 
   const titleOverlayDiv = document.createElement("div");

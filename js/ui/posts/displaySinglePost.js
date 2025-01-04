@@ -3,11 +3,8 @@ import { getName } from "../../helpers/storage.js";
 
 export function displaySinglePost(post) {
   const postImage = document.querySelector("#postImage");
-  postImage.setAttribute(
-    "src",
-    post.media?.url || "https://images.unsplash.com/photo-1618044619888-009e412ff12a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  );
-  postImage.setAttribute("alt", post.media?.alt || "Screen with programming language");
+  postImage.setAttribute("src", post.media?.url || "/images/logo.png");
+  postImage.setAttribute("alt", post.media?.alt || "A light beam with the name and slogan of Beam.");
 
   const postTitle = document.querySelector("#postTitle");
   postTitle.innerText = post.title;
