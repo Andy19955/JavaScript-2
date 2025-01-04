@@ -10,6 +10,7 @@ export async function allPostsHandler(page) {
     const posts = await fetchPosts(page);
     postsLoader.classList.add("hidden");
     displayPosts(posts, postsContainer);
+    console.log(posts);
   } catch (error) {
     displayMessage("#messageContainer", "error", error.message);
   } finally {
