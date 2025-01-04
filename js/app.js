@@ -7,6 +7,7 @@ import { profileHandler } from "./handlers/profiles/profileHandler.js";
 import { singlePostHandler } from "./handlers/posts/singlePostHandler.js";
 import { createPostHandler } from "./handlers/posts/createPostHandler.js";
 import { editPostHandler } from "./handlers/posts/editPostHandler.js";
+import { searchPostsHandler } from "./handlers/posts/searchPostsHandler.js";
 
 function router() {
   const { pathname } = location;
@@ -28,6 +29,7 @@ function router() {
       toggleMenu();
       allPostsHandler(1);
       createPostHandler();
+      searchPostsHandler(1, false);
       break;
     case "/post/":
       toggleMenu();

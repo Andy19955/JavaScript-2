@@ -99,16 +99,24 @@
         <div class="flex flex-col gap-4 w-full lg:w-1/4">
           <div class="flex flex-col gap-5 bg-white shadow-md rounded-md p-3 h-fit">
             <h2 class="text-lg">Search</h2>
-            <form id="postSearchForm">
+            <form id="searchPostsForm">
               <fieldset class="flex flex-col gap-4">
                 <div class="flex flex-col">
                   <label for="search" class="font-bold">Search for posts</label>
-                  <input type="text" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" id="search" placeholder="Enter search word" required />
+                  <input
+                    type="text"
+                    value="bridgy"
+                    class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700"
+                    id="search"
+                    name="searchQuery"
+                    placeholder="Enter search word"
+                    required
+                  />
                 </div>
                 <button
                   type="submit"
                   id="submitSearchButton"
-                  class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
+                  class="text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
                 >
                   Search
                 </button>
@@ -117,7 +125,7 @@
           </div>
           <div class="flex flex-col gap-5 bg-white shadow-md rounded-md p-3 h-fit">
             <h2 class="text-lg">Filtering</h2>
-            <form id="postFilteringForm">
+            <form id="filterPostsForm">
               <fieldset class="flex flex-col gap-4">
                 <div class="flex flex-col">
                   <label for="search" class="font-bold">Filter by tag</label>
@@ -125,8 +133,8 @@
                 </div>
                 <button
                   type="submit"
-                  id="submitFilteringButton"
-                  class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
+                  id="submitFilterButton"
+                  class="text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
                 >
                   Filter
                 </button>
