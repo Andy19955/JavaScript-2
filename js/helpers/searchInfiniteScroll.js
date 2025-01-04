@@ -1,5 +1,6 @@
 import { searchPosts } from "../api/posts/searchPosts.js";
 import { displayPosts } from "../ui/posts/displayPosts.js";
+import { displayMessage } from "../ui/shared/displayMessage.js";
 import { throttle } from "./throttleFunction.js";
 
 let currentSearchPage = 1;
@@ -35,7 +36,7 @@ export function searchInfiniteScroll() {
           displayPosts(posts, postsContainer);
         }
       } catch (error) {
-        console.error("Error loading more search results:", error);
+        displayMessage("#messageContainer", "error", error.message);
       } finally {
         isLoading = false;
         postsLoader.classList.add("hidden");
