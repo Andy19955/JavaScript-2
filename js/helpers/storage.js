@@ -1,5 +1,6 @@
 const tokenKey = "token";
 const nameKey = "name";
+const apiKey = "key";
 
 export function saveToken(token) {
   localStorage.setItem(tokenKey, token);
@@ -15,4 +16,12 @@ export function saveName(name) {
 
 export function getName() {
   return localStorage.getItem(nameKey);
+}
+
+export function saveApiKey(key) {
+  localStorage.setItem(apiKey, key);
+}
+
+export function getApiKey() {
+  return localStorage.getItem(apiKey);
 }

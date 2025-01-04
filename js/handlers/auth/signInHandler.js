@@ -1,6 +1,7 @@
 import { signInUser } from "../../api/auth/signInUser.js";
-import { saveName, saveToken } from "../../helpers/storage.js";
+import { saveName, saveToken, saveApiKey } from "../../helpers/storage.js";
 import { displayMessage } from "../../ui/shared/displayMessage.js";
+import { createApiKey } from "../../api/auth/createApiKey.js";
 
 export function signInHandler() {
   const signInForm = document.querySelector("#signInForm");
@@ -24,6 +25,9 @@ async function submitForm(event) {
     const response = await signInUser(data);
     saveToken(response.data.accessToken);
     saveName(response.data.name);
+
+    const apiKey = await createApiKey();
+    saveApiKey(apiKey.data.key);
     window.location.href = "/profile/";
   } catch (error) {
     displayMessage("#messageContainer", "error", error.message);

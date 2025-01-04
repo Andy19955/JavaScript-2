@@ -1,6 +1,5 @@
 import { postsUrl } from "../../constants/apiUrls.js";
-import { apiKey } from "../../constants/constants.js";
-import { getToken } from "../../helpers/storage.js";
+import { getApiKey, getToken } from "../../helpers/storage.js";
 
 export async function createPost(post) {
   const media = {
@@ -17,7 +16,7 @@ export async function createPost(post) {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${getToken()}`,
-      "X-Noroff-API-Key": apiKey,
+      "X-Noroff-API-Key": getApiKey(),
     },
     body: JSON.stringify(post),
   };
