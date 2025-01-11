@@ -5,14 +5,22 @@ import { setupProfileInfiniteScroll } from "../../helpers/profileInfiniteScroll.
 
 export async function profilePostsHandler(name, page) {
   const postsContainer = document.querySelector("#postsContainer");
+  let postsCount;
   try {
     const posts = await fetchProfilePosts(name, page);
+    postsCount = posts.data.length;
+    postsLoader.classList.add("hidden");
     displayPosts(posts, postsContainer);
   } catch (error) {
     displayMessage("#messageContainer", "error", error.message);
   } finally {
-    window.addEventListener("scroll", () => {
-      setupProfileInfiniteScroll(name);
-    });
+    if (postsCount > 0) {
+      window.addEventListener("scroll", () => {
+        setupProfileInfiniteScroll(name);
+      });
+    } else {
+      postsContainer.innerText = "Found no posts";
+    }
+    postsLoader;
   }
 }
