@@ -1,10 +1,16 @@
 import { getQueryParam } from "../../helpers/getQueryParam.js";
 import { getName } from "../../helpers/storage.js";
+import { fallbackImage, fallBackImageAlt } from "../../constants/constants.js";
 
 export function displaySinglePost(post) {
   const postImage = document.querySelector("#postImage");
-  postImage.setAttribute("src", post.media?.url || "/images/logo.png");
-  postImage.setAttribute("alt", post.media?.alt || "A light beam with the name and slogan of Beam.");
+  postImage.setAttribute("src", post.media?.url || fallbackImage);
+  postImage.setAttribute("alt", post.media?.alt || fallBackImageAlt);
+  postImage.onerror = () => {
+    postImage.src = fallbackImage;
+    postImage.alt = fallBackImageAlt;
+    postImage.onerror = null;
+  };
 
   const postTitle = document.querySelector("#postTitle");
   postTitle.innerText = post.title;

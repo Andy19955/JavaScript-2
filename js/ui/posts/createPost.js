@@ -1,3 +1,5 @@
+import { fallbackImage, fallBackImageAlt } from "../../constants/constants.js";
+
 export function createPost(post) {
   const postCardLink = document.createElement("a");
   postCardLink.setAttribute("href", `/post/?id=${post.id}`);
@@ -14,9 +16,14 @@ export function createPost(post) {
   if (post.media && post.media.url) {
     postImage.alt = post.media?.alt || `${post.title} post's featured image`;
     postImage.src = post.media.url;
+    postImage.onerror = () => {
+      postImage.src = fallbackImage;
+      postImage.alt = fallBackImageAlt;
+      postImage.onerror = null;
+    };
   } else {
-    postImage.alt = "A light beam with the name and slogan of Beam.";
-    postImage.src = "/images/logo.png";
+    postImage.alt = fallBackImageAlt;
+    postImage.src = fallbackImage;
   }
 
   const titleOverlayDiv = document.createElement("div");
