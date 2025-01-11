@@ -2,11 +2,11 @@ export function toggleFollowersFollowing() {
   const views = {
     followers: {
       select: document.querySelector("#followers-select"),
-      view: document.querySelector("#followers"),
+      view: document.querySelector("#followersContainer"),
     },
     following: {
       select: document.querySelector("#following-select"),
-      view: document.querySelector("#following"),
+      view: document.querySelector("#followingContainer"),
     },
   };
 
