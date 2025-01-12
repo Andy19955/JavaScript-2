@@ -2,7 +2,7 @@
 
 ## Description
 
-This is my project for the JavaScript 2 course. The project is a social media site with an authentication page, a profile page and a feed page. The site has been styled by using Tailwind. The post data is fetched from an API and displayed on the page. The feed page automatically loads more posts as the user scrolls down the page.
+This is my project for the JavaScript 2 course. The project is a social media site with an authentication page, a profile page and a feed page. The site has been styled by using Tailwind. The post data is fetched from an API and displayed on the page. The feed page automatically loads more posts as the user scrolls down the page. The profile page displays profile information, followers, following and user's posts. The user's posts are also loaded automatically as the user scrolls down the page.
 
 ## Trello board with development tasks
 
