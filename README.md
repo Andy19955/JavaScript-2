@@ -25,20 +25,6 @@ URL to the Trello board with the development tasks for this project: (https://tr
 git clone https://github.com/Andy19955/JavaScript-2.git
 ```
 
-2. Install the dependencies:
-
-```
-npm install
-```
-
-### Running
-
-To run the app, run the following commands:
-
-```bash
-npm run start
-```
-
 ## Contributing
 
 If contributing, make sure to open a pull request so code can be reviewed.
