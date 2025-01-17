@@ -8,12 +8,14 @@ let lastName = null;
 let isLoading = false;
 let hasMorePosts = true;
 
-export function setupProfileInfiniteScroll(initialName) {
+export function setupProfileInfiniteScroll(initialName, isLastPage) {
   currentPostsPage = 1;
   lastName = initialName;
   hasMorePosts = true;
 
-  window.addEventListener("scroll", profileInfiniteScroll);
+  if (isLastPage === false) {
+    window.addEventListener("scroll", profileInfiniteScroll);
+  }
 }
 
 export function profileInfiniteScroll() {
