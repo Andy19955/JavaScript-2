@@ -39,7 +39,7 @@ async function submitForm(event, page) {
     const posts = await searchPosts(data, page);
     postsCount = posts.data.length;
     postsLoader.classList.add("hidden");
-    displayPosts(posts, postsContainer);
+    displayPosts(posts.data, postsContainer);
 
     if (postsCount === maxPosts) {
       setupSearchInfiniteScroll(data);

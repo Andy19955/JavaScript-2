@@ -31,7 +31,6 @@ function router() {
       allPostsHandler(1);
       createPostHandler();
       searchPostsHandler(1, false);
-      filterPostsHandler(1, false);
       break;
     case "/post/":
       toggleMenu();
