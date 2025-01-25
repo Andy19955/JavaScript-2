@@ -12,7 +12,7 @@ export async function profilePostsHandler(name, page) {
     postsCount = posts.data.length;
     postsLoader.classList.add("hidden");
     isLastPage = posts.meta.isLastPage;
-    displayPosts(posts, postsContainer);
+    displayPosts(posts.data, postsContainer);
   } catch (error) {
     displayMessage("#messageContainer", "error", error.message);
   } finally {

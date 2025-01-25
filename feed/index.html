@@ -128,14 +128,16 @@
               <fieldset class="flex flex-col gap-4">
                 <div class="flex flex-col">
                   <label for="filterQuery" class="font-bold">Filter by tag</label>
-                  <input type="text" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" id="filter" name="filterQuery" placeholder="Enter tag" required />
+                  <select class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-700" id="filter" name="filterQuery" placeholder="Enter tag" required>
+                    <option selected disabled>Select tag</option>
+                  </select>
                 </div>
                 <button
-                  type="submit"
-                  id="submitFilterButton"
+                  type="button"
+                  id="resetFilterButton"
                   class="text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
                 >
-                  Filter
+                  Reset filter
                 </button>
               </fieldset>
             </form>
