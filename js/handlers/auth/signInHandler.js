@@ -33,6 +33,6 @@ async function submitForm(event) {
     displayMessage("#messageContainer", "error", error.message);
   } finally {
     fieldset.disabled = false;
-    submitButton.textContent = "Sign up";
+    submitButton.textContent = "Sign in";
   }
 }
