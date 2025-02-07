@@ -3,7 +3,7 @@ import { fetchSinglePost } from "../../api/posts/fetchSinglePost.js";
 import { getQueryParam } from "../../helpers/getQueryParam.js";
 import { fillEditFormInputs } from "../../ui/posts/fillEditFormInputs.js";
 import { editPost } from "../../api/posts/editPost.js";
-import { deletePostHandler } from "./deletePostHandler.js";
+import { toggleDeletePostModal } from "../../ui/shared/toggleDeletePostModal.js";
 
 const postId = getQueryParam("id");
 
@@ -21,7 +21,7 @@ export async function editPostHandler() {
     if (editPostForm) {
       editPostForm.addEventListener("submit", submitForm);
       const deleteButton = document.querySelector("#deleteButton");
-      deleteButton.addEventListener("click", deletePostHandler);
+      deleteButton.addEventListener("click", toggleDeletePostModal);
     }
   }
 }

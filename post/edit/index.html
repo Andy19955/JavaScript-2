@@ -101,6 +101,19 @@
             </fieldset>
           </form>
         </div>
+        <div id="modalOverlay" class="hidden fixed top-0 left-0 bg-black w-full h-full z-10 opacity-65"></div>
+        <div id="modalContainer" class="hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 max-w-md w-full px-4">
+          <div class="bg-white shadow-lg rounded-md p-3 flex flex-col gap-5">
+            <div class="flex justify-between">
+              <h2 class="text-xl font-medium">Delete permanently</h2>
+              <button type="button" id="closeModalButton" class="hover:text-gray-600 text-lg">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+            <p>Are you sure that you want to permanently delete this post? This action cannot be undone.</p>
+            <button id="confirmDeleteButton" type="button" class="text-white font-bold py-2.5 px-5 rounded-md bg-red-900 hover:bg-red-800 transition duration-100">Delete permanently</button>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="text-center p-2 h-12">&copy; 2025 Beam</footer>
