@@ -21,7 +21,7 @@ This project offers the following features:
 
 - HTML
 - CSS
-- Tailwind
+- Tailwind CSS
 - JavaScript
 
 ## Getting Started
