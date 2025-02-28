@@ -2,6 +2,12 @@ import { displayMessage } from "../../ui/shared/displayMessage.js";
 import { getQueryParam } from "../../helpers/getQueryParam.js";
 import { deletePost } from "../../api/posts/deletePost.js";
 
+/**
+ * Handles deleting a post.
+ *
+ * @example
+ * deletePostHandler();
+ */
 export async function deletePostHandler() {
   const deleteButton = document.querySelector("#deleteButton");
   const confirmDeleteButton = document.querySelector("#confirmDeleteButton");

@@ -3,6 +3,12 @@ import { saveName, saveToken, saveApiKey } from "../../helpers/storage.js";
 import { displayMessage } from "../../ui/shared/displayMessage.js";
 import { createApiKey } from "../../api/auth/createApiKey.js";
 
+/**
+ * Sets up the sign-in form handler.
+ *
+ * @example
+ * signInHandler();
+ */
 export function signInHandler() {
   const signInForm = document.querySelector("#signInForm");
   if (signInForm) {
@@ -10,6 +16,15 @@ export function signInHandler() {
   }
 }
 
+/**
+ * Handles the form submission for signing in a user.
+ *
+ * @param {Event} event - The form submission event.
+ *
+ * @example
+ * const form = document.querySelector("#signInForm");
+ * form.addEventListener("submit", submitForm);
+ */
 async function submitForm(event) {
   event.preventDefault();
   const form = event.target;

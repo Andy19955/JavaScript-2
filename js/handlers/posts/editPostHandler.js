@@ -7,6 +7,12 @@ import { toggleDeletePostModal } from "../../ui/shared/toggleDeletePostModal.js"
 
 const postId = getQueryParam("id");
 
+/**
+ * Handles fetching the post data and setting up the edit post form.
+ *
+ * @example
+ * editPostHandler();
+ */
 export async function editPostHandler() {
   const postLoader = document.querySelector("#postLoader");
   const editPostForm = document.querySelector("#editPostForm");
@@ -26,6 +32,15 @@ export async function editPostHandler() {
   }
 }
 
+/**
+ * Handles the form submission for editing a post.
+ *
+ * @param {Event} event - The form submission event.
+ *
+ * @example
+ * const form = document.querySelector("#editPostForm");
+ * form.addEventListener("submit", submitForm);
+ */
 async function submitForm(event) {
   event.preventDefault();
   const form = event.target;

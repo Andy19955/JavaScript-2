@@ -5,6 +5,14 @@ import { displayMessage } from "../../ui/shared/displayMessage.js";
 import { setupSearchInfiniteScroll } from "../../helpers/searchInfiniteScroll.js";
 import { maxPosts } from "../../constants/constants.js";
 
+/**
+ * Handles the search posts form submission and sets up infinite scroll.
+ *
+ * @param {number} page - The page number to fetch posts from.
+ *
+ * @example
+ * searchPostsHandler(1);
+ */
 export async function searchPostsHandler(page) {
   const searchPostsForm = document.querySelector("#searchPostsForm");
   if (searchPostsForm) {
@@ -14,6 +22,18 @@ export async function searchPostsHandler(page) {
   }
 }
 
+/**
+ * Handles the form submission for searching posts.
+ *
+ * @param {Event} event - The form submission event.
+ * @param {number} page - The page number to fetch posts from.
+ *
+ * @example
+ * const form = document.querySelector("#searchPostsForm");
+ * form.addEventListener("submit", (event) => {
+ *   submitForm(event, 1);
+ * });
+ */
 async function submitForm(event, page) {
   event.preventDefault();
   window.removeEventListener("scroll", infiniteScroll);

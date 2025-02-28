@@ -8,6 +8,15 @@ let lastSearchData = null;
 let isLoading = false;
 let hasMorePosts = true;
 
+/**
+ * Sets up infinite scroll for searching posts.
+ *
+ * @param {Object} initialSearchData - The initial search data to use for the search.
+ *
+ * @example
+ * const initialSearchData = { query: "JavaScript" };
+ * setupSearchInfiniteScroll(initialSearchData);
+ */
 export function setupSearchInfiniteScroll(initialSearchData) {
   currentSearchPage = 1;
   lastSearchData = initialSearchData;
@@ -16,6 +25,12 @@ export function setupSearchInfiniteScroll(initialSearchData) {
   window.addEventListener("scroll", searchInfiniteScroll);
 }
 
+/**
+ * Handles the infinite scroll functionality for searching posts.
+ *
+ * @example
+ * window.addEventListener("scroll", searchInfiniteScroll);
+ */
 export function searchInfiniteScroll() {
   throttle(async () => {
     const endOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 300;

@@ -1,6 +1,12 @@
 import { registerUser } from "../../api/auth/registerUser.js";
 import { displayMessage } from "../../ui/shared/displayMessage.js";
 
+/**
+ * Sets up the register form handler.
+ *
+ * @example
+ * registerHandler();
+ */
 export function registerHandler() {
   const registerForm = document.querySelector("#registerForm");
   if (registerForm) {
@@ -8,6 +14,15 @@ export function registerHandler() {
   }
 }
 
+/**
+ * Handles the form submission for registering a user.
+ *
+ * @param {Event} event - The form submission event.
+ *
+ * @example
+ * const form = document.querySelector("#registerForm");
+ * form.addEventListener("submit", submitForm);
+ */
 async function submitForm(event) {
   event.preventDefault();
   const form = event.target;

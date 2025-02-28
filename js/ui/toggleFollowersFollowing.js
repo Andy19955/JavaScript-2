@@ -1,3 +1,9 @@
+/**
+ * Toggles between the followers and following views.
+ *
+ * @example
+ * toggleFollowersFollowing();
+ */
 export function toggleFollowersFollowing() {
   const views = {
     followers: {
