@@ -8,7 +8,6 @@ import { singlePostHandler } from "./handlers/posts/singlePostHandler.js";
 import { createPostHandler } from "./handlers/posts/createPostHandler.js";
 import { editPostHandler } from "./handlers/posts/editPostHandler.js";
 import { searchPostsHandler } from "./handlers/posts/searchPostsHandler.js";
-import { filterPostsHandler } from "./handlers/posts/filterPostsHandler.js";
 
 function router() {
   const { pathname } = location;
