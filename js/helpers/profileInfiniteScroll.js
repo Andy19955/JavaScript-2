@@ -8,6 +8,15 @@ let lastName = null;
 let isLoading = false;
 let hasMorePosts = true;
 
+/**
+ * Sets up infinite scroll for profile posts.
+ *
+ * @param {string} initialName - The name of the profile to fetch posts for.
+ * @param {boolean} isLastPage - Indicates if the current page is the last page of posts.
+ *
+ * @example
+ * setupProfileInfiniteScroll("JohnDoe", false);
+ */
 export function setupProfileInfiniteScroll(initialName, isLastPage) {
   currentPostsPage = 1;
   lastName = initialName;
@@ -18,6 +27,12 @@ export function setupProfileInfiniteScroll(initialName, isLastPage) {
   }
 }
 
+/**
+ * Handles the infinite scroll functionality for profile posts.
+ *
+ * @example
+ * window.addEventListener("scroll", profileInfiniteScroll);
+ */
 export function profileInfiniteScroll() {
   throttle(async () => {
     const endOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 300;

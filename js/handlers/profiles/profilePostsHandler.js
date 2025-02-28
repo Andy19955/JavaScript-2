@@ -3,6 +3,15 @@ import { fetchProfilePosts } from "../../api/posts/fetchProfilePosts.js";
 import { displayPosts } from "../../ui/posts/displayPosts.js";
 import { setupProfileInfiniteScroll } from "../../helpers/profileInfiniteScroll.js";
 
+/**
+ * Handles fetching and displaying profile posts, and sets up infinite scroll.
+ *
+ * @param {string} name - The name of the profile to fetch posts for.
+ * @param {number} page - The page number to fetch posts from.
+ *
+ * @example
+ * profilePostsHandler("JohnDoe", 1);
+ */
 export async function profilePostsHandler(name, page) {
   const postsContainer = document.querySelector("#postsContainer");
   let postsCount;

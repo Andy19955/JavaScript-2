@@ -5,6 +5,12 @@ const postsLoader = document.querySelector("#postsLoader");
 
 let currentPage = 1;
 
+/**
+ * Handles the infinite scroll functionality for loading more posts.
+ *
+ * @example
+ * window.addEventListener("scroll", infiniteScroll);
+ */
 export function infiniteScroll() {
   throttle(() => {
     const endOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 300;

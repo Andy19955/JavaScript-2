@@ -1,5 +1,11 @@
 import { deletePostHandler } from "../../handlers/posts/deletePostHandler.js";
 
+/**
+ * Toggles the visibility of the delete post modal.
+ *
+ * @example
+ * toggleDeletePostModal();
+ */
 export function toggleDeletePostModal() {
   const modalContainer = document.querySelector("#modalContainer");
   const modalOverlay = document.querySelector("#modalOverlay");

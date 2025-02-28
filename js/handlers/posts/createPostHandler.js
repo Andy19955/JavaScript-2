@@ -1,6 +1,9 @@
 import { displayMessage } from "../../ui/shared/displayMessage.js";
 import { createPost } from "../../api/posts/createPost.js";
 
+/**
+ * Initializes the create post form handler by adding a submit event listener to the form.
+ */
 export async function createPostHandler() {
   const createPostForm = document.querySelector("#createPostForm");
   if (createPostForm) {
@@ -8,6 +11,12 @@ export async function createPostHandler() {
   }
 }
 
+/**
+ * Handles the form submission for creating a new post.
+ *
+ * @param {Event} event - The form submission event.
+ * @returns {Promise<void>} - A promise that resolves when the form submission is complete.
+ */
 async function submitForm(event) {
   event.preventDefault();
   const form = event.target;
@@ -29,3 +38,4 @@ async function submitForm(event) {
     submitButton.textContent = "Publish";
   }
 }
+createPostHandler;

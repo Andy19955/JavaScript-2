@@ -7,6 +7,12 @@ import { profilePostsHandler } from "./profilePostsHandler.js";
 import { displayFollowers } from "../../ui/profiles/displayFollowers.js";
 import { displayFollowing } from "../../ui/profiles/displayFollowing.js";
 
+/**
+ * Handles fetching and displaying the profile, profile posts, followers, and following.
+ *
+ * @example
+ * profileHandler();
+ */
 export async function profileHandler() {
   const profileLoader = document.querySelector("#profileLoader");
   let name = getName();

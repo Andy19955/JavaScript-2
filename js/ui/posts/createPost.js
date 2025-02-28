@@ -1,5 +1,37 @@
 import { fallbackImage, fallBackImageAlt } from "../../constants/constants.js";
 
+/**
+ * Creates a DOM element representing a post.
+ *
+ * @param {Object} post - The post object containing the data to display.
+ * @param {string} post.id - The ID of the post.
+ * @param {string} post.title - The title of the post.
+ * @param {Object} post.author - The author object containing the name and avatar of the post author.
+ * @param {Object} post.author.avatar - The avatar object containing the URL of the author's avatar.
+ * @param {string} post.author.avatar.url - The URL of the author's avatar image.
+ * @param {Object} [post.media] - The media object containing the URL and alt text of the post image.
+ * @param {string} [post.media.url] - The URL of the post image.
+ * @param {string} [post.media.alt] - The alt text for the post image.
+ *
+ * @returns {HTMLAnchorElement} - The DOM element representing the post.
+ *
+ * @example
+ * const post = {
+ *   id: "1",
+ *   title: "My Post Title",
+ *   author: {
+ *     avatar: {
+ *       url: "https://example.com/avatar.jpg"
+ *     }
+ *   },
+ *   media: {
+ *     url: "https://example.com/image.jpg",
+ *     alt: "An example image"
+ *   }
+ * };
+ * const postElement = createPost(post);
+ * document.body.append(postElement);
+ */
 export function createPost(post) {
   const postCardLink = document.createElement("a");
   postCardLink.setAttribute("href", `/post/?id=${post.id}`);

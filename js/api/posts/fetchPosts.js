@@ -2,6 +2,18 @@ import { postsUrl } from "../../constants/apiUrls.js";
 import { maxPosts } from "../../constants/constants.js";
 import { getApiKey, getToken } from "../../helpers/storage.js";
 
+/**
+ * Fetches posts with pagination.
+ *
+ * @param {number} postsPage - The page number to fetch posts from.
+ * @returns {Promise<Object>} - A promise that resolves to the posts data.
+ * @throws {Error} - Throws an error if the posts fetch fails.
+ *
+ * @example
+ * fetchPosts(1)
+ *   .then(posts => console.log(posts))
+ *   .catch(error => console.error(error));
+ */
 export async function fetchPosts(postsPage) {
   const options = {
     headers: {

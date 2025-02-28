@@ -6,6 +6,12 @@ import { filterPostsHandler } from "./filterPostsHandler.js";
 
 const allPosts = [];
 
+/**
+ * Handles fetching and displaying all posts, as well as setting up infinite scroll and tag filtering.
+ *
+ * @param {number} page - The page number to fetch posts from.
+ * @returns {Promise<void>} - A promise that resolves when the posts have been fetched and displayed.
+ */
 export async function allPostsHandler(page) {
   const postsContainer = document.querySelector("#postsContainer");
   const postsLoader = document.querySelector("#postsLoader");
