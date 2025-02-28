@@ -23,6 +23,7 @@ This project offers the following features:
 - CSS
 - Tailwind CSS
 - JavaScript
+- Github Projects
 
 ## Getting Started
 
