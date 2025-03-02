@@ -24,14 +24,16 @@ import { getApiKey, getToken } from "../../helpers/storage.js";
  *   .catch(error => console.error(error));
  */
 export async function createPost(post) {
-  const media = {
-    url: post.imageUrl,
-    alt: post.imageAlt,
-  };
+  if (post.imageUrl) {
+    const media = {
+      url: post.imageUrl,
+      alt: post.imageAlt,
+    };
 
-  delete post.imageUrl;
-  delete post.imageAlt;
-  post.media = media;
+    delete post.imageUrl;
+    delete post.imageAlt;
+    post.media = media;
+  }
 
   const options = {
     method: "POST",
