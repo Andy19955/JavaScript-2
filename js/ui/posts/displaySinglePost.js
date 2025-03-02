@@ -33,7 +33,7 @@ import { fallbackImage, fallBackImageAlt } from "../../constants/constants.js";
 export function displaySinglePost(post) {
   const postImage = document.querySelector("#postImage");
   postImage.setAttribute("src", post.media?.url || fallbackImage);
-  postImage.setAttribute("alt", post.media?.alt || fallBackImageAlt);
+  postImage.setAttribute("alt", post.media?.alt || (post.media?.url ? `${post.title} post's featured image` : fallBackImageAlt));
   postImage.onerror = () => {
     postImage.src = fallbackImage;
     postImage.alt = fallBackImageAlt;

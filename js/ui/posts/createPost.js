@@ -46,7 +46,7 @@ export function createPost(post) {
   const postImage = document.createElement("img");
   postImage.classList.add("rounded-lg", "shadow-md", "object-cover", "group-hover:scale-125", "transition-all", "duration-300", "w-full", "h-52", "group-hover:h-full");
   if (post.media && post.media.url) {
-    postImage.alt = post.media?.alt || `${post.title} post's featured image`;
+    postImage.setAttribute("alt", post.media?.alt || (post.media?.url ? `${post.title} post's featured image` : fallBackImageAlt));
     postImage.src = post.media.url;
     postImage.onerror = () => {
       postImage.src = fallbackImage;
