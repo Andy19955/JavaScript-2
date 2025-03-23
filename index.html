@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in - Beam</title>
+    <meta name="description" content="Log in to your user at the Beam." />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/39adc5ba14.js" crossorigin="anonymous"></script>
+    <script src="./js/app.js" type="module"></script>
+  </head>
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <main class="flex flex-col flex-1 justify-center items-center">
+      <section class="flex flex-col items-center gap-10 md:gap-14 p-4 w-fit md:w-1/2 max-w-lg m-4">
+        <img src="./images/logo.png" alt="Beam logo with slogan" class="w-full max-w-80" />
+        <h1 class="text-xl md:text-2xl font-bold">Sign in to your account</h1>
+        <form id="signInForm" class="w-full">
+          <div id="messageContainer" class="hidden mb-3"></div>
+          <fieldset class="flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+              <label for="email" class="pl-3 font-bold">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="px-3 py-1 border-2 border-solid border-orange-400 focus:outline-none rounded-md"
+                autocomplete="email"
+                pattern="^[^@]+@(stud\.|)(noroff\.no)$"
+                title="Please provide a noroff.no or stud.noroff.no e-mail address."
+                required
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label for="password" class="pl-3 font-bold">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="px-3 py-1 border-2 border-solid border-orange-400 focus:outline-none rounded-md"
+                minlength="8"
+                autocomplete="current-password"
+                required
+              />
+              <a href="#" class="text-cyan-700 hover:underline text-right">Forgot password?</a>
+            </div>
+            <div class="mx-auto flex flex-col gap-3 items-center">
+              <button
+                type="submit"
+                id="submitButton"
+                class="w-40 text-white font-bold p-2.5 rounded-full bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600"
+              >
+                Sign in
+              </button>
+              <p>Don't have an account? <a href="./register/" class="text-cyan-700 hover:underline">Sign up</a></p>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer class="text-center p-2">&copy; 2025 Beam</footer>
+  </body>
+</html>
